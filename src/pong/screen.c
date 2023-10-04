@@ -173,7 +173,7 @@ void ppg_reg_fps() {
 bool ppg_screen_refresh(ppg *game, bool player_found) {
   bool ret = false;
   SDL_Color colors[2] = {{26, 255, 26, 0}, {255, 255, 0, 0}};
-  SDL_Rect dst = {640, 0, FONT_SIZE, 166};
+  SDL_Rect dst = {50, 20, FONT_SIZE, 80};
 
   SDL_RenderClear(game->ren); /* First clear the renderer */
 
@@ -224,13 +224,13 @@ static bool entered_exit_label(SDL_Event *e) {
 /* Hacked up but she works */
 bool ppg_show_menu(ppg *game, SDL_Event *e, uint32_t *key) {
   bool ret = false;
-  const char *labels[3] = {"Online Ping Pong", "Play Game", "Exit"};
+  const char *labels[3] = {"Ping Pong", "Play Game", "Exit"};
   SDL_Color colors[2] = {{255,255,255,0}, {255,0,0,0}};
 
   /* Position Menu Items */
   SDL_Rect pos[3];
   ppg_copy_sdl_color(game, 3, colors[0]);
-  update_position(&pos[0], 640, 0, FONT_SIZE+40, 166);
+  update_position(&pos[0], 50, 0, FONT_SIZE+40, 166);
   update_position(&pos[1], SCREEN_WIDTH/2 - 200, SCREEN_HEIGHT/2 - 150, 300, 150);
   update_position(&pos[2], SCREEN_WIDTH/2 - 200, SCREEN_HEIGHT/2, 300, 150);
 
